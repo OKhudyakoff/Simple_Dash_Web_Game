@@ -6,7 +6,7 @@ app = dash.Dash(
     external_stylesheets=[dbc.themes.BOOTSTRAP]
 )
 
-app.config.suppress_callback_exceptions = True
+app.config['suppress_callback_exceptions'] = True
 app.title = 'basic-dash-auth-flow'
 
 server = app.server

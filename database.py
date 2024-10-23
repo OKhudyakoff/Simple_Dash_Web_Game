@@ -1,5 +1,9 @@
 import oracledb;
 
+VALID_USERNAME_PASSWORD_PAIRS = {
+    'admin': 'admin'
+}
+
 def connect_to_db():
     # Путь к файлу instantclient_23_5 (поменять)
     dir = r"C:\Users\444\Documents\instantclient_23_5";
@@ -20,3 +24,6 @@ def connect_to_db():
     except:
         # в случае сбоя подключения будет выведено сообщение в STDOUT
         return('Can`t establish connection to database Oracle');
+
+def validate_login(login, password):
+    return login in VALID_USERNAME_PASSWORD_PAIRS and VALID_USERNAME_PASSWORD_PAIRS[login] == password
